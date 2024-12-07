@@ -61,24 +61,15 @@ document.addEventListener('DOMContentLoaded', () => {
             submitButton.textContent = 'Submitting...';
             submitButton.disabled = true;
 
-            // Convert FormData to URL encoded string
-            const formDataObj = {};
-            formData.forEach((value, key) => {
-                formDataObj[key] = value;
-            });
-            formDataObj.formType = formType;
-            formDataObj.timestamp = new Date().toISOString();
+            // Add form type and timestamp to the form data
+            formData.append('formType', formType);
+            formData.append('timestamp', new Date().toISOString());
 
-            // Create URL with parameters
-            const url = new URL(scriptURL);
-            Object.keys(formDataObj).forEach(key => {
-                url.searchParams.append(key, formDataObj[key]);
-            });
-
-            // Send request
-            const response = await fetch(url, {
+            // Send request with form data
+            const response = await fetch(scriptURL, {
                 method: 'POST',
-                mode: 'no-cors', // This is key for Google Apps Script
+                mode: 'no-cors',
+                body: formData
             });
 
             // Since we're using no-cors, we can't read the response

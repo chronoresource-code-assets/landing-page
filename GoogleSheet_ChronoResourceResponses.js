@@ -47,10 +47,20 @@ function setupSheet(sheetName, headers) {
 }
 
 function doPost(e) {
+  // Debug logging
+  Logger.log('Request content type: ' + (e.postData ? e.postData.type : 'none'));
+  Logger.log('Request parameters: ' + JSON.stringify(e.parameter));
+  Logger.log('Request postData: ' + (e.postData ? e.postData.contents : 'none'));
+
   // Handle CORS preflight requests
-  if (e.postData.type === "application/json") {
-    const data = JSON.parse(e.postData.contents);
-    e.parameter = data;
+  if (e.postData && e.postData.type === "application/json") {
+    try {
+      const data = JSON.parse(e.postData.contents);
+      Logger.log('Parsed JSON data: ' + JSON.stringify(data));
+      e.parameter = data;
+    } catch (error) {
+      Logger.log('Error parsing JSON: ' + error.message);
+    }
   }
 
   const lock = LockService.getScriptLock()
@@ -59,6 +69,9 @@ function doPost(e) {
   try {
     const doc = SpreadsheetApp.openById(scriptProp.getProperty('key'))
     const formType = e.parameter.formType || 'contact' // Default to contact form for backward compatibility
+
+    Logger.log('Form type: ' + formType);
+    Logger.log('Parameters after processing: ' + JSON.stringify(e.parameter));
 
     let sheetName, requiredFields
     switch(formType) {
@@ -75,13 +88,19 @@ function doPost(e) {
         requiredFields = ['name', 'email', 'country', 'userType', 'message']
     }
 
+    Logger.log('Selected sheet: ' + sheetName);
+    Logger.log('Required fields: ' + JSON.stringify(requiredFields));
+
     const sheet = doc.getSheetByName(sheetName)
     const headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0]
     const nextRow = sheet.getLastRow() + 1
 
+    Logger.log('Headers: ' + JSON.stringify(headers));
+
     // Validate required fields
     for (const field of requiredFields) {
       if (!e.parameter[field]) {
+        Logger.log('Missing required field: ' + field);
         throw new Error(`Missing required field: ${field}`)
       }
     }
@@ -95,9 +114,12 @@ function doPost(e) {
       if (header === 'otherBusinessTypeText') {
         return e.parameter.businessType === 'others' ? e.parameter[header] : ''
       }
-      return e.parameter[header] || ''
+      const value = e.parameter[header] || '';
+      Logger.log(`Mapping header ${header} to value: ${value}`);
+      return value;
     })
 
+    Logger.log('New row data: ' + JSON.stringify(newRow));
     sheet.getRange(nextRow, 1, 1, newRow.length).setValues([newRow])
 
     return ContentService
@@ -112,6 +134,8 @@ function doPost(e) {
       .setHeader('Access-Control-Allow-Headers', 'Content-Type')
 
   } catch (error) {
+    Logger.log('Error: ' + error.message);
+    Logger.log('Stack: ' + error.stack);
     return ContentService
       .createTextOutput(JSON.stringify({ 
         'result': 'error', 
