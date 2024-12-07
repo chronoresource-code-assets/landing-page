@@ -74,9 +74,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Since we're using no-cors, we can't read the response
             // We'll assume success if we get here
-            alert('Thank you for joining the movement! We will be in touch soon.');
-            document.getElementById('joinMovementModal').style.display = 'none';
             form.reset();
+            window.modalUtils.closeModal();
+            alert('Thank you for joining the movement! We will be in touch soon.');
 
         } catch (error) {
             console.error('Error:', error);
