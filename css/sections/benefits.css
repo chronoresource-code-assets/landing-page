@@ -44,19 +44,27 @@
 }
 
 .benefit-icon {
+  position: relative;
   flex: 0 0 80px;
-  height: 80px;
+  width: 80px;
   margin-right: 2rem;
   background: var(--color-primary);
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   box-shadow: 0 4px 8px rgba(57, 181, 74, 0.2);
   transition: all 0.3s ease;
 }
 
+.benefit-icon::before {
+  content: '';
+  display: block;
+  padding-top: 100%; /* This creates a 1:1 aspect ratio */
+}
+
 .benefit-icon i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-size: 3.2rem;
   color: var(--color-white);
 }
@@ -92,7 +100,7 @@
   
   .benefit-icon {
     flex: 0 0 70px;
-    height: 70px;
+    width: 70px;
   }
   
   .benefit-icon i {
@@ -129,6 +137,8 @@
   .benefit-icon {
     margin-right: 0;
     margin-bottom: 1.5rem;
+    flex: 0 0 60px;
+    width: 60px;
   }
   
   .benefit-text h4 {
