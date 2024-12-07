@@ -256,7 +256,7 @@
 })(jQuery);
 
 // Contact Form Handler
-const scriptURL = 'https://script.google.com/macros/s/AKfycbz53YrR9DFhmkbyh0h-_ep3fhSpJkQXAKyxBO427dAuhHVC3mtXejMJVDCmqEGMTnqT/exec'
+const scriptURL = 'https://script.google.com/macros/s/AKfycbxRcPM_0DOQxf6peknoBaPmn7y_PQKqqkGogILGNLGZxpOvrxBBehQrXFKnoQ7PkdCO/exec'
 const form = document.forms['contactForm']
 const submitMessage = document.getElementById('submit-message')
 const successMessage = document.querySelector('.success-message')
