@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
             submitButton.textContent = 'Submitting...';
             submitButton.disabled = true;
 
-            // Convert FormData to a plain object
+            // Convert FormData to URL encoded string
             const formDataObj = {};
             formData.forEach((value, key) => {
                 formDataObj[key] = value;
@@ -69,24 +69,24 @@ document.addEventListener('DOMContentLoaded', () => {
             formDataObj.formType = formType;
             formDataObj.timestamp = new Date().toISOString();
 
-            // Send as JSON
-            const response = await fetch(scriptURL, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formDataObj)
+            // Create URL with parameters
+            const url = new URL(scriptURL);
+            Object.keys(formDataObj).forEach(key => {
+                url.searchParams.append(key, formDataObj[key]);
             });
 
-            const data = await response.json();
-            
-            if (data.result === 'success') {
-                alert('Thank you for joining the movement! We will be in touch soon.');
-                document.getElementById('joinMovementModal').style.display = 'none';
-                form.reset();
-            } else {
-                throw new Error(data.error || 'Submission failed');
-            }
+            // Send request
+            const response = await fetch(url, {
+                method: 'POST',
+                mode: 'no-cors', // This is key for Google Apps Script
+            });
+
+            // Since we're using no-cors, we can't read the response
+            // We'll assume success if we get here
+            alert('Thank you for joining the movement! We will be in touch soon.');
+            document.getElementById('joinMovementModal').style.display = 'none';
+            form.reset();
+
         } catch (error) {
             console.error('Error:', error);
             alert('Sorry, there was an error submitting the form. Please try again.');
