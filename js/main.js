@@ -271,35 +271,33 @@ form.addEventListener('submit', e => {
   submitButton.textContent = 'Sending...'
   submitButton.disabled = true
   
-  fetch(scriptURL, { 
-    method: 'POST', 
+  // Send request with form data
+  fetch(scriptURL, {
+    method: 'POST',
+    mode: 'no-cors',
     body: new FormData(form)
   })
-    .then(response => response.json())  // Parse the JSON response
-    .then(data => {
-      console.log('Success:', data)  // Log the full response
-      if (data.result === 'success') {
-        form.reset()
-        submitMessage.style.display = 'block'
-        successMessage.style.display = 'block'
-        errorMessage.style.display = 'none'
-        setTimeout(() => {
-          submitMessage.style.display = 'none'
-        }, 5000)
-      } else {
-        throw new Error(data.error || 'Unknown error occurred')
-      }
-    })
-    .catch(error => {
-      console.error('Error details:', error)  // Log detailed error
-      submitMessage.style.display = 'block'
-      errorMessage.style.display = 'block'
-      errorMessage.textContent = 'Error submitting form: ' + error.message
-      successMessage.style.display = 'none'
-    })
-    .finally(() => {
-      // Reset button state
-      submitButton.textContent = originalButtonText
-      submitButton.disabled = false
-    })
+  .then(() => {
+    // Since we're using no-cors, we can't read the response
+    // We'll assume success if we get here
+    form.reset()
+    submitMessage.style.display = 'block'
+    successMessage.style.display = 'block'
+    errorMessage.style.display = 'none'
+    setTimeout(() => {
+      submitMessage.style.display = 'none'
+    }, 5000)
+  })
+  .catch(error => {
+    console.error('Error:', error)
+    submitMessage.style.display = 'block'
+    errorMessage.style.display = 'block'
+    errorMessage.textContent = 'Error submitting form: ' + error.message
+    successMessage.style.display = 'none'
+  })
+  .finally(() => {
+    // Reset button state
+    submitButton.textContent = originalButtonText
+    submitButton.disabled = false
+  })
 })
