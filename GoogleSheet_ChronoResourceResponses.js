@@ -47,6 +47,12 @@ function setupSheet(sheetName, headers) {
 }
 
 function doPost(e) {
+  // Handle CORS preflight requests
+  if (e.postData.type === "application/json") {
+    const data = JSON.parse(e.postData.contents);
+    e.parameter = data;
+  }
+
   const lock = LockService.getScriptLock()
   lock.tryLock(10000)
 
@@ -101,7 +107,9 @@ function doPost(e) {
         'formType': formType 
       }))
       .setMimeType(ContentService.MimeType.JSON)
-      .setHeader('Access-Control-Allow-Origin', '*')
+      .setHeader('Access-Control-Allow-Origin', 'https://chronoresource-code-assets.github.io')
+      .setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
+      .setHeader('Access-Control-Allow-Headers', 'Content-Type')
 
   } catch (error) {
     return ContentService
@@ -111,7 +119,9 @@ function doPost(e) {
         'parameters': e.parameter  // This helps debug what data was received
       }))
       .setMimeType(ContentService.MimeType.JSON)
-      .setHeader('Access-Control-Allow-Origin', '*')
+      .setHeader('Access-Control-Allow-Origin', 'https://chronoresource-code-assets.github.io')
+      .setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
+      .setHeader('Access-Control-Allow-Headers', 'Content-Type')
 
   } finally {
     lock.releaseLock()
@@ -122,5 +132,7 @@ function doGet(e) {
   return ContentService
     .createTextOutput(JSON.stringify({ 'result': 'error', 'message': 'GET not supported' }))
     .setMimeType(ContentService.MimeType.JSON)
-    .setHeader('Access-Control-Allow-Origin', '*')
+    .setHeader('Access-Control-Allow-Origin', 'https://chronoresource-code-assets.github.io')
+    .setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
+    .setHeader('Access-Control-Allow-Headers', 'Content-Type')
 }

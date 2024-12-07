@@ -61,14 +61,21 @@ document.addEventListener('DOMContentLoaded', () => {
             submitButton.textContent = 'Submitting...';
             submitButton.disabled = true;
 
-            // Add form type to the data
-            formData.append('formType', formType);
-            formData.append('timestamp', new Date().toISOString());
+            // Convert FormData to a plain object
+            const formDataObj = {};
+            formData.forEach((value, key) => {
+                formDataObj[key] = value;
+            });
+            formDataObj.formType = formType;
+            formDataObj.timestamp = new Date().toISOString();
 
-            // Use the same script URL as the contact form
+            // Send as JSON
             const response = await fetch(scriptURL, {
                 method: 'POST',
-                body: formData
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formDataObj)
             });
 
             const data = await response.json();

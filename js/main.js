@@ -256,7 +256,7 @@
 })(jQuery);
 
 // Contact Form Handler
-const scriptURL = 'https://script.google.com/macros/s/AKfycbyCKF9UI3V4o8_rWZVSOI6OTO2tw9RJ5wzsixvEyn5K8bJQLXUeHfiE29mWSs_ffmn2/exec' // You'll get this after deploying the Apps Script
+const scriptURL = 'https://script.google.com/macros/s/AKfycbz53YrR9DFhmkbyh0h-_ep3fhSpJkQXAKyxBO427dAuhHVC3mtXejMJVDCmqEGMTnqT/exec'
 const form = document.forms['contactForm']
 const submitMessage = document.getElementById('submit-message')
 const successMessage = document.querySelector('.success-message')
