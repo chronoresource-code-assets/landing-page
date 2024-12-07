@@ -1,0 +1,150 @@
+/* Contact Section */
+#contact {
+  background: var(--color-white);
+  padding-top: 12rem;
+  padding-bottom: 12rem;
+}
+
+.contact-content {
+  max-width: 1200px;
+  margin: 3.6rem auto 0;
+  padding: 0 2rem;
+}
+
+/* Contact Form */
+#contactForm {
+  margin-top: 3.6rem;
+}
+
+.form-field {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+#contactForm input[type="text"],
+#contactForm input[type="email"],
+#contactForm input[type="country"],
+#contactForm select,
+#contactForm textarea {
+  width: 100%;
+  background: #f4f4f4;
+  border: none;
+  border-radius: 3px;
+  color: var(--color-text);
+  padding: 1.2rem 2rem;
+  outline: none;
+  font-size: 1.5rem;
+  line-height: 3rem;
+  transition: all 0.3s ease-in-out;
+}
+
+#contactForm input[type="text"]:focus,
+#contactForm input[type="email"]:focus,
+#contactForm input[type="country"]:focus,
+#contactForm select:focus,
+#contactForm textarea:focus {
+  background: #ffffff;
+  box-shadow: 0 0 0 2px var(--color-primary);
+}
+
+#contactForm textarea {
+  min-height: 200px;
+  resize: vertical;
+}
+
+#contactForm select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23666666%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem top 50%;
+  background-size: 0.65rem auto;
+  padding-right: 3rem;
+}
+
+#contactForm button.button-primary {
+  margin-top: 3rem;
+  padding: 0 3rem;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+
+#contactForm button.button-primary:hover,
+#contactForm button.button-primary:focus {
+  background: #33a242;
+  border-color: #33a242;
+}
+
+/* Contact Info */
+.contact-info {
+  margin-top: 4.8rem;
+  padding-left: 3rem;
+}
+
+.contact-info .cinfo {
+  margin-bottom: 4.2rem;
+}
+
+.contact-info .cinfo h5 {
+  color: var(--color-heading);
+  margin-bottom: 1.2rem;
+}
+
+.contact-info .cinfo p {
+  margin-bottom: 0;
+  color: var(--color-text);
+}
+
+.contact-social {
+  list-style: none;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.contact-social li {
+  display: inline-block;
+  margin-right: 1rem;
+  padding: 0;
+}
+
+.contact-social li a {
+  color: var(--color-text);
+  font-size: 1.8rem;
+}
+
+.contact-social li a:hover,
+.contact-social li a:focus {
+  color: var(--color-primary);
+}
+
+/* Responsive: Contact */
+@media only screen and (max-width: 1024px) {
+  .contact-content {
+    max-width: 800px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #contact {
+    padding-top: 9rem;
+    padding-bottom: 9rem;
+  }
+
+  .contact-content {
+    max-width: 600px;
+  }
+
+  .contact-info {
+    padding-left: 0;
+    margin-top: 3rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .contact-info .cinfo {
+    margin-bottom: 3rem;
+  }
+} 

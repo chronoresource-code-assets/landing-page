@@ -1,0 +1,97 @@
+/* Journey Section */
+#journey {
+  background: #f2f2f2;
+  padding-top: 12rem;
+  padding-bottom: 12rem;
+}
+
+.process-content {
+  max-width: 1000px;
+  margin-top: 3.6rem;
+}
+
+.process-content .item {
+  margin-bottom: 3rem;
+  padding-left: 6rem;
+  position: relative;
+}
+
+.process-content .item-header {
+  margin-bottom: 1.5rem;
+}
+
+.process-content .item-num {
+  font-family: var(--font-bold);
+  font-size: 2.1rem;
+  line-height: 1.875;
+  color: var(--color-primary);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.process-content h3 {
+  font-size: 2rem;
+  line-height: 1.5;
+  color: var(--color-heading);
+  margin-bottom: 1.5rem;
+}
+
+.process-content p {
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+}
+
+.process-content .left-side {
+  padding-right: 3rem;
+}
+
+/* Responsive: Journey */
+@media only screen and (max-width: 1024px) {
+  .process-content {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #journey {
+    padding-top: 9rem;
+    padding-bottom: 9rem;
+  }
+
+  .process-content {
+    max-width: 600px;
+  }
+
+  .process-content .item {
+    padding-left: 5rem;
+  }
+
+  .process-content .item-num {
+    font-size: 1.8rem;
+  }
+
+  .process-content h3 {
+    font-size: 1.8rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .process-content .item {
+    padding-left: 4rem;
+  }
+
+  .process-content .item-num {
+    font-size: 1.6rem;
+  }
+
+  .process-content h3 {
+    font-size: 1.6rem;
+  }
+
+  .process-content .left-side {
+    padding-right: 0;
+  }
+} 

@@ -1,0 +1,135 @@
+/* Buttons */
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  display: inline-block;
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  height: 5.4rem;
+  line-height: calc(5.4rem - .6rem);
+  padding: 0 3rem;
+  margin: 0 .3rem 1.2rem 0;
+  color: var(--color-black);
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+  border-radius: .5rem;
+  transition: all 0.3s ease-in-out;
+  background-color: #c5c5c5;
+  border: .3rem solid #c5c5c5;
+}
+
+.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+.button:focus,
+button:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+input[type="button"]:focus {
+  background-color: #b8b8b8;
+  border-color: #b8b8b8;
+  color: var(--color-black);
+  outline: 0;
+}
+
+.button.button-primary,
+button.button-primary,
+input[type="submit"].button-primary,
+input[type="reset"].button-primary,
+input[type="button"].button-primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.button.stroke {
+  background: transparent !important;
+  color: #a5a5a5 !important;
+}
+
+.button.stroke:hover {
+  border: 0.3rem solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+/* Forms */
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea,
+select {
+  display: block;
+  height: 6rem;
+  padding: 1.5rem 2rem;
+  border: 0;
+  outline: none;
+  color: #333333;
+  font-family: var(--font-secondary);
+  font-size: 1.5rem;
+  line-height: 3rem;
+  max-width: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  border-radius: 5px;
+  margin-bottom: 3rem;
+}
+
+textarea {
+  min-height: 25rem;
+}
+
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  color: var(--color-black);
+}
+
+label,
+legend {
+  font-family: var(--font-primary);
+  font-size: 1.4rem;
+  margin-bottom: .6rem;
+  color: var(--color-heading);
+  display: block;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline;
+}
+
+::-webkit-input-placeholder {
+  color: var(--color-gray);
+}
+
+:-moz-placeholder {
+  color: var(--color-gray);
+}
+
+::-moz-placeholder {
+  color: var(--color-gray);
+}
+
+:-ms-input-placeholder {
+  color: var(--color-gray);
+}
+
+.placeholder {
+  color: var(--color-gray) !important;
+} 

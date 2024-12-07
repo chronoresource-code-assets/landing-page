@@ -1,0 +1,70 @@
+/* About Section */
+#about {
+  background: var(--color-white);
+  padding-top: 12rem;
+  padding-bottom: 12rem;
+}
+
+.about-intro {
+  padding-bottom: 3.6rem;
+}
+
+.about-intro h1.intro-header {
+  font-family: var(--font-primary);
+  font-size: 3.4rem;
+  line-height: 1.324;
+  color: var(--color-heading);
+  position: relative;
+  padding-bottom: 3.6rem;
+}
+
+.about-intro h1.intro-header::before {
+  display: block;
+  content: "";
+  height: 2px;
+  width: 70px;
+  background-color: var(--color-primary);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.about-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Responsive: About */
+@media only screen and (max-width: 1024px) {
+  .about-intro {
+    max-width: 800px;
+    text-align: center;
+  }
+
+  .about-intro h1::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .about-intro [class*="col-"] {
+    width: 100% !important;
+    float: none !important;
+    clear: both !important;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #about {
+    padding-top: 9rem;
+    padding-bottom: 9rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .about-intro h1.intro-header {
+    font-size: 2.8rem;
+  }
+}

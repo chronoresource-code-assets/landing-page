@@ -1,0 +1,124 @@
+/* Who We Serve Section */
+#who-we-serve {
+  background: var(--color-white);
+  padding-top: 12rem;
+  padding-bottom: 12rem;
+}
+
+.who-we-serve-content {
+  max-width: 1200px;
+  margin: 3.6rem auto 0;
+  padding: 0 2rem;
+}
+
+.who-we-serve-content .bgrid {
+  padding: 0 20px;
+  margin-bottom: 3.6rem;
+}
+
+.who-we-serve-content .service-content {
+  background: var(--color-white);
+  border: 1px solid #e0e0e0;
+  padding: 2.4rem;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  height: 100%;
+}
+
+.who-we-serve-content .title-with-icon {
+  text-align: center;
+  margin-bottom: 2.4rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.who-we-serve-content .title-with-icon .icon {
+  display: block;
+  margin-bottom: 1.2rem;
+}
+
+.who-we-serve-content .title-with-icon .icon i {
+  font-size: 3.6rem;
+  color: var(--color-primary);
+}
+
+.who-we-serve-content .title-with-icon h3 {
+  font-size: 2.4rem;
+  line-height: 1.333;
+  color: var(--color-heading);
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.who-we-serve-content .content-block {
+  padding: 0 1rem;
+}
+
+.who-we-serve-content h4 {
+  font-size: 1.8rem;
+  line-height: 1.333;
+  color: var(--color-primary);
+  margin: 2rem 0 1rem;
+}
+
+.who-we-serve-content ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.who-we-serve-content ul li {
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+  position: relative;
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+.who-we-serve-content ul li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+}
+
+/* Responsive: Who We Serve */
+@media only screen and (max-width: 1024px) {
+  .who-we-serve-content {
+    max-width: 800px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #who-we-serve {
+    padding-top: 9rem;
+    padding-bottom: 9rem;
+  }
+
+  .who-we-serve-content {
+    max-width: 600px;
+  }
+
+  .who-we-serve-content .bgrid {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .who-we-serve-content .service-content {
+    padding: 1.8rem;
+  }
+
+  .who-we-serve-content .title-with-icon .icon i {
+    font-size: 3rem;
+  }
+
+  .who-we-serve-content .title-with-icon h3 {
+    font-size: 2rem;
+  }
+
+  .who-we-serve-content h4 {
+    font-size: 1.6rem;
+  }
+}

@@ -1,0 +1,70 @@
+/* Team Section */
+.team-member {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.member-pic {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 2.4rem;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.member-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+}
+
+.member-pic:hover img {
+  transform: scale(1.05);
+  filter: grayscale(0%);
+  -webkit-filter: grayscale(0%);
+}
+
+.member-info {
+  margin-top: 1.5rem;
+}
+
+.member-info h3 {
+  font-size: 1.8rem;
+  line-height: 1.333;
+  color: var(--color-primary);
+  margin-bottom: 0.6rem;
+}
+
+.member-info span {
+  font-size: 1.4rem;
+  color: #888888;
+  font-family: var(--font-secondary);
+}
+
+/* Responsive: Team */
+@media only screen and (max-width: 768px) {
+  .member-pic {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .member-pic {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .member-info h3 {
+    font-size: 1.6rem;
+  }
+  
+  .member-info span {
+    font-size: 1.3rem;
+  }
+}
