@@ -71,8 +71,8 @@
 	/* FitVids
 	 * ---------------------------------------------------- */
 	var ssFitVids = function() {
-		$(".fluid-video-wrapper").fitVids();
-	}; 
+		// Removed since we're not using FitVids
+	};
 
 
 
@@ -167,14 +167,14 @@
   	* ------------------------------------------------------ */
 	var ssAOS = function() {
 
-		AOS.init( {
-      	offset: 200,
-      	duration: 600,
-      	easing: 'ease-in-sine',
-      	delay: 300,
-			once: true,
+		AOS.init({
+			offset: 200,
+			duration: 600,
+			easing: 'ease-in-out',
+			delay: 300,
+			once: false,
 			disable: 'mobile'
-    	});
+		});
 
 	};
 

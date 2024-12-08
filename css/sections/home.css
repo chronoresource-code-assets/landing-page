@@ -49,8 +49,36 @@
   font-size: 5.2rem;
   letter-spacing: -.05rem;
   line-height: 1.269;
-  color: #ffc800;
+  color: #ffae00;
   margin-bottom: 9rem;
+}
+
+.title-backdrop {
+  position: relative;
+  display: inline-block;
+  padding: 3rem;
+  margin: -3rem;
+  margin-bottom: 7rem;
+  border-radius: 40px;
+}
+
+.title-backdrop::before {
+  content: '';
+  position: absolute;
+  top: -45px;
+  left: 67px;
+  width: 100%;
+  height: 104%;
+  background: radial-gradient(
+    circle at 43% 51%,
+    rgba(0, 0, 0, 0.6) -40%,
+    rgba(0, 0, 0, 0.5) -31%,
+    rgba(0, 0, 0, 0.2) 35%,
+    rgba(0, 0, 0, 0.1) 45%,
+    transparent 80%
+  );
+  z-index: -1;
+  pointer-events: none;
 }
 
 .home-content-left p {
