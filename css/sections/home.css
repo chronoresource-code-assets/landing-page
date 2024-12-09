@@ -82,9 +82,10 @@
 }
 
 .home-content-left p {
-  color: #03a8ae;
+  color: #04d0d7;
   margin-bottom: 3rem;
   font-size: 1.8rem;
+  font-weight: normal;
 }
 
 .home-content-left .button.stroke {
@@ -273,6 +274,60 @@
 @media only screen and (max-width: 768px) {
   .home-content-left h1 {
     font-size: 3.6rem;
+  }
+
+  .home-content-left p {
+    position: relative;
+    display: inline-block;
+    padding: 2rem 2.5rem;
+    margin: -0.5rem;
+    color: #04e7ef;
+    top: -150px;
+  }
+
+  .home-content-left p::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(
+      ellipse at center,
+      rgba(0, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0.3) 40%,
+      rgba(0, 0, 0, 0.1) 70%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    z-index: -1;
+    pointer-events: none;
+    filter: blur(5px);
+  }
+
+  .home-content-left .button.stroke {
+    background-color: var(--color-primary) !important;
+    color: #000000 !important;
+    border-color: var(--color-primary);
+    margin: 0 .6rem 1.2rem;
+    padding: 0 2.2rem;
+    min-width: 188px;
+  }
+
+  .home-content-left .button.stroke span {
+    color: #000000;
+  }
+
+  .home-content-left .button.stroke:hover,
+  .home-content-left .button.stroke:focus {
+    background-color: #03bbc1 !important;
+    border-color: #03bbc1;
+    color: #000000 !important;
+  }
+
+  .home-content-left .button.stroke:hover span,
+  .home-content-left .button.stroke:focus span {
+    color: #000000;
   }
 }
 
