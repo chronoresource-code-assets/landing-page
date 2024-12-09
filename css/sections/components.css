@@ -48,6 +48,16 @@ input[type="button"].button-primary {
   color: var(--color-white);
 }
 
+.button.button-primary:hover,
+button.button-primary:hover,
+input[type="submit"].button-primary:hover,
+input[type="reset"].button-primary:hover,
+input[type="button"].button-primary:hover {
+  background-color: #03bbc1;
+  border-color: #03bbc1;
+  color: var(--color-white);
+}
+
 .button.stroke {
   background: transparent !important;
   color: #a5a5a5 !important;
@@ -55,7 +65,7 @@ input[type="button"].button-primary {
 
 .button.stroke:hover {
   border: 0.3rem solid var(--color-primary);
-  color: var(--color-primary);
+  color: var(--color-primary) !important;
 }
 
 /* Forms */

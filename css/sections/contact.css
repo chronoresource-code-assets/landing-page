@@ -67,14 +67,15 @@
   margin-top: 3rem;
   padding: 0 3rem;
   background: var(--color-primary);
-  color: var(--color-white);
+  color: #000000;
   border-color: var(--color-primary);
 }
 
 #contactForm button.button-primary:hover,
 #contactForm button.button-primary:focus {
-  background: #33a242;
-  border-color: #33a242;
+  background: #03bbc1;
+  border-color: #03bbc1;
+  color: #000000;
 }
 
 /* Contact Info */

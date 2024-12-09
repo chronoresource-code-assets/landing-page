@@ -49,7 +49,7 @@
   font-size: 5.2rem;
   letter-spacing: -.05rem;
   line-height: 1.269;
-  color: #ffae00;
+  color: #04e7ef;
   margin-bottom: 9rem;
 }
 
@@ -82,14 +82,14 @@
 }
 
 .home-content-left p {
-  color: #d4d4d4;
+  color: #03a8ae;
   margin-bottom: 3rem;
   font-size: 1.8rem;
 }
 
 .home-content-left .button.stroke {
-  color: #ffc800 !important;
-  border-color: #ffc800;
+  color: #04d0d7 !important;
+  border-color: #04d0d7;
   margin: 0 .6rem 1.2rem;
   padding: 0 2.2rem;
   min-width: 188px;
@@ -97,8 +97,9 @@
 
 .home-content-left .button.stroke:hover,
 .home-content-left .button.stroke:focus {
-  background-color: #ffc800 !important;
-  color: var(--color-black) !important;
+  background-color: #04d0d7 !important;
+  border-color: #04d0d7;
+  color: #000000 !important;
 }
 
 .home-image-right {
@@ -186,7 +187,7 @@
   position: relative;
   top: 36px;
   right: 42px;
-  animation: animate-it 3s ease infinite;
+  animation: bounce 3s infinite;
 }
 
 .scroll-icon i {
@@ -195,9 +196,17 @@
   bottom: -6px;
 }
 
-.scroll-icon:hover,
-.scroll-icon:focus {
-  color: #ffc800 !important;
+/* Bounce Animation */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(0);
+  }
+  40% {
+    transform: translateX(-10px);
+  }
+  60% {
+    transform: translateX(-5px);
+  }
 }
 
 /* Responsive: Home */

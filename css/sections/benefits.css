@@ -50,7 +50,7 @@
   margin-right: 2rem;
   background: var(--color-primary);
   border-radius: 50%;
-  box-shadow: 0 4px 8px rgba(57, 181, 74, 0.2);
+  box-shadow: 0 4px 8px rgba(4, 208, 215, 0.2);
   transition: all 0.3s ease;
 }
 
@@ -89,7 +89,7 @@
 /* Hover effects */
 .benefit-item:hover .benefit-icon {
   transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(57, 181, 74, 0.3);
+  box-shadow: 0 6px 12px rgba(4, 208, 215, 0.3);
 }
 
 /* Responsive: Benefits */
